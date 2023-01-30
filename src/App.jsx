@@ -28,9 +28,14 @@ function App() {
 
       <div className="main">
           <ul>
-            <li className="notepadInfos">
-              <NotesToDo></NotesToDo>
-            </li>
+
+            <NotesToDo title="title" text="Lembrar de codar o Input"></NotesToDo>
+
+            <NotesToDo title="Teste de anotação" text="Teste de texto no front em react"></NotesToDo>
+
+            <NotesToDo title="Anotação Loren Ipsum" text="Loren Ipsum"></NotesToDo>
+
+
           </ul>
         </div>
     </MainDiv>
