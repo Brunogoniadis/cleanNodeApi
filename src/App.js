@@ -2,14 +2,19 @@ import styled from "styled-components";
 
 export const MainDiv = styled.main`
 
-
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    
     
 
     .aside{
         width: 250px;
 
         position: fixed;
-
 
 
         margin-bottom: 3vh;
@@ -69,6 +74,18 @@ export const MainDiv = styled.main`
         }
     }
     .main{
+        flex: 1;
+        margin-left: 350px;
+        .notepadInfos{
+            display: flex;
+            justify-content: space-between;
+        }
         
+        ul{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap:20px;
+            list-style: none;
+        }
     }
 `

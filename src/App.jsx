@@ -1,4 +1,5 @@
 import { MainDiv } from "./App"
+import { NotesToDo } from "./components/notesToDo";
 
 
 function App() {
@@ -23,11 +24,15 @@ function App() {
 
             <button type="submit"> Salvar</button>
           </form>
-
-        <div className="main">
-          
-        </div>
       </div>
+
+      <div className="main">
+          <ul>
+            <li className="notepadInfos">
+              <NotesToDo></NotesToDo>
+            </li>
+          </ul>
+        </div>
     </MainDiv>
   )
 }
