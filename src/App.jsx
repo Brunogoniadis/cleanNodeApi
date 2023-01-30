@@ -6,27 +6,31 @@ function App() {
 
   return (
     <MainDiv>
-      <div className="aside">
-          <strong>Caderno de notas</strong>
 
-          <form>
-            <div className="inputBlock">
-              <label htmlFor="title">Titulo da anotação</label>
-              <input className="title" type="text" />
+      <div className="asideDiv">
+        <div className="asideCard">
+            <strong>Caderno de notas</strong>
 
-            </div>
-          
-            <div className="inputBlock">
-              <label htmlFor="nota">Anotações</label>
-              <input className="anotatiton" type="text" />
+            <form>
+              <div className="inputBlock">
+                <label htmlFor="title">Titulo da anotação</label>
+                <input className="title" type="text" />
 
-            </div>
+              </div>
+            
+              <div className="inputBlock">
+                <label htmlFor="nota">Anotações</label>
+                <input className="anotatiton" type="text" />
 
-            <button type="submit"> Salvar</button>
-          </form>
+              </div>
+
+              <button type="submit"> Salvar</button>
+            </form>
+        </div>
       </div>
 
-      <div className="main">
+
+      <div className="dashboard">
           <ul>
 
             <NotesToDo title="title" text="teste" ></NotesToDo>

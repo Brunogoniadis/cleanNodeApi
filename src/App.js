@@ -2,18 +2,24 @@ import styled from "styled-components";
 
 export const MainDiv = styled.main`
 
-    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0 auto;
     padding: 60px 30px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    
 
-    .aside{
+    .asideDiv{
+        width: 25vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .asideCard{
         width: 250px;
-
-        position: fixed;
+        left: 18vw;
 
         margin-bottom: 3vh;
         padding: 30px 20px;
@@ -71,13 +77,10 @@ export const MainDiv = styled.main`
 
         }
     }
-    .main{
-        flex: 1;
-        margin-left: 350px;
-        .notepadInfos{
-            display: flex;
-            justify-content: space-between;
-        }
+    .dashboard{
+
+        width: 50vw;
+        height: 75vh;
         
         ul{
             display: grid;
