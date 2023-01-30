@@ -9,13 +9,11 @@ export const MainDiv = styled.main`
     flex-direction: row;
     align-items: flex-start;
     
-    
 
     .aside{
         width: 250px;
 
         position: fixed;
-
 
         margin-bottom: 3vh;
         padding: 30px 20px;
@@ -83,9 +81,14 @@ export const MainDiv = styled.main`
         
         ul{
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap:20px;
-            list-style: none;
+            grid-template-columns: repeat(auto-fill, 250px);
+            column-gap: 25px;
+            row-gap: 8px;
+            grid-auto-rows: 10px;
+            position: absolute;
+            justify-content: center;
+            width: 950px;
+            height: auto;
         }
     }
 `

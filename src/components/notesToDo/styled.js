@@ -6,8 +6,8 @@ export const Notepad = styled.div`
     box-shadow: 0 0 14px 0 rgba(0,0,0,0.2);
     border-radius: 10px;
     padding: 20px 20px 10px 20px;
-    height: 250px;
     width: 250px;
+    grid-row-end: span ${props => props.row};
     
     strong{
         display: block;
@@ -19,17 +19,30 @@ export const Notepad = styled.div`
                 margin-top: 7px;
                 margin-bottom: 5px;
                 width: 100%;
-                height: 150px;
+                height: 75%;
                 font-size: 14px;
                 color: #666;
                 border: none;
                 background-color: #fff;
                 resize: none;
+                cursor: auto;
+                
+            ::-webkit-scrollbar{
+                width: 10px;
+                background-color: var(--color-primary);
+            }  ::-webkit-scrollbar-thumb {
+
+                background-color: var(--color-action);
+            }
+
+            }
+            .titleHeader{
+                
+                display: flex;
+                
+                justify-content: space-between;
             }
             .close{
-                position: relative;
-                left: 100%;
-                bottom: 15%;
 
                 cursor: pointer;
 
@@ -39,28 +52,21 @@ export const Notepad = styled.div`
                 background-color: transparent;
 
                 :hover{
-                    color: #eb8f7a;
+                    color: var(--color-primary);
                     transition: 0.2s;
                 }
             }
             .alert{
                 color: #c4c4c4;
                 cursor: pointer;
-
-
+                
 
                 border: none;
                 background-color: transparent;
 
-                svg{
-                    width: auto;
-                    height: 100%;
-                    transform: scaleY(1.2);
-                    transform: scaleX(2);
-                }
 
                 :hover{
-                    color: #eb8f7a;
+                    color: var(--color-primary);
                     transition: 0.2s;
                 }
             }

@@ -5,13 +5,15 @@ export default createGlobalStyle`
     --color-text: #131313;
     --color-text-in-primary: #000000;
     --background-color: #F2F2F2;
-    --color-primary: #3EC863;
+    --color-primary: #eb8f7a;
+    --color-action: #EA524F;
+    
     --color-secondary: #310A27;
     --color-tertiary: #102542;
     --color-border: rgba(255, 255, 255, 0.2);
     --color-success: #7CC39C;
     --color-warning: #FBEA85;
-    --color-error: #EA524F;
+
     font-size: 60%;   
   }
   @media (min-width: 700px) {

@@ -29,12 +29,15 @@ function App() {
       <div className="main">
           <ul>
 
-            <NotesToDo title="title" text="Lembrar de codar o Input"></NotesToDo>
+            <NotesToDo title="title" text="teste" ></NotesToDo>
 
-            <NotesToDo title="Teste de anotação" text="Teste de texto no front em react"></NotesToDo>
+            <NotesToDo title="Teste de anotação" text="Teste de texto no front em react Teste de texto no front em react Teste de texto no front em react Teste de texto no front em react Teste de texto no front em react Teste de texto no front em react Teste de texto no front em react Teste de texto no front em react Teste de texto no front em react Teste de texto no front em react Teste de texto no front em react Teste de texto no front em react Teste de texto no front em react Teste de texto no front em react Teste de texto no front em react Teste de texto no front em react " ></NotesToDo>
+
+            <NotesToDo title="Anotação Loren Ipsum" text="Teste de texto com algumas letras Teste de texto com algumas letras Teste de texto com algumas letras Teste de texto com algumas letras "></NotesToDo>
 
             <NotesToDo title="Anotação Loren Ipsum" text="Loren Ipsum"></NotesToDo>
-
+            <NotesToDo title="Anotação Loren Ipsum" text="Loren Ipsum"></NotesToDo>
+            <NotesToDo title="Anotação Loren Ipsum" text="Loren Ipsum"></NotesToDo>
 
           </ul>
         </div>
