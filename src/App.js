@@ -59,6 +59,8 @@ export const MainDiv = styled.main`
                 border-bottom: 1px solid #D9D9D9;
                 height: 200px;
                 width: 100%;
+                display: flex;
+                flex-direction: column;
             }
         }
         button{

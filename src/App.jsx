@@ -1,9 +1,40 @@
 import { MainDiv } from "./App"
 import { NotesToDo } from "./components/notesToDo";
+import { useState, useEffect} from "react";
 
+import api from "./services/api"
 
 function App() {
 
+  const [title, setTitles] = useState('');
+  const [notes, setNotes] = useState('');
+  const [ allNotes, setAllNotes] = useState ([]);
+
+  useEffect(() => {
+    async function getAllNotes() {
+      const response = await api.get('/annotations');
+      setAllNotes(response.data);
+    }
+    
+    getAllNotes();
+  }, []);
+
+  async function handleSubmit(e){
+    e.preventDefault();
+
+
+
+    const response = await api.post('/annotations',{
+      title,
+      notes,
+      priority: false
+    })
+    
+    setTitles(' ');
+    setNotes(' ');
+    getAllNotes();
+  }
+    
   return (
     <MainDiv>
 
@@ -11,17 +42,27 @@ function App() {
         <div className="asideCard">
             <strong>Caderno de notas</strong>
 
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="inputBlock">
                 <label htmlFor="title">Titulo da anotação</label>
-                <input className="title" type="text" />
-
+                <input className="title" type="text" 
+                  required
+                  value={title}
+                  onChange = {e => setTitles(e.target.value)}
+                  />
+                  
               </div>
             
               <div className="inputBlock">
                 <label htmlFor="nota">Anotações</label>
-                <input className="anotatiton" type="text" />
-
+                <textarea className="anotatiton" type="text" 
+                  required
+                  value={notes}
+                  onChange = {e => setNotes(e.target.value)}
+                  />
+              
+                  
+  
               </div>
 
               <button type="submit"> Salvar</button>
@@ -32,16 +73,16 @@ function App() {
 
       <div className="dashboard">
           <ul>
+            
+          {allNotes.map(note => (
+            <NotesToDo title={note.title} notes={note.notes} id={note.id} />
+          ))}
 
-            <NotesToDo title="title" text="teste" ></NotesToDo>
 
-            <NotesToDo title="Teste de anotação" text="Teste de texto no front em react Teste de texto no front em react Teste de texto no front em react Teste de texto no front em react Teste de texto no front em react Teste de texto no front em react Teste de texto no front em react Teste de texto no front em react Teste de texto no front em react Teste de texto no front em react Teste de texto no front em react Teste de texto no front em react Teste de texto no front em react Teste de texto no front em react Teste de texto no front em react Teste de texto no front em react " ></NotesToDo>
+            
 
-            <NotesToDo title="Anotação Loren Ipsum" text="Teste de texto com algumas letras Teste de texto com algumas letras Teste de texto com algumas letras Teste de texto com algumas letras "></NotesToDo>
 
-            <NotesToDo title="Anotação Loren Ipsum" text="Loren Ipsum"></NotesToDo>
-            <NotesToDo title="Anotação Loren Ipsum" text="Loren Ipsum"></NotesToDo>
-            <NotesToDo title="Anotação Loren Ipsum" text="Loren Ipsum"></NotesToDo>
+
 
           </ul>
         </div>

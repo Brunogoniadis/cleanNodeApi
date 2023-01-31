@@ -26,7 +26,9 @@ export const Notepad = styled.div`
                 background-color: #fff;
                 resize: none;
                 cursor: auto;
-                
+                display: inline-block;
+
+
             ::-webkit-scrollbar{
                 width: 10px;
                 background-color: var(--color-primary);

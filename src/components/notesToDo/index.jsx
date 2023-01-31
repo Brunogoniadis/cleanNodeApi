@@ -4,10 +4,10 @@ import {IoAlert} from "react-icons/io5"
 import {IoMdClose} from "react-icons/io"
 
 
-export const NotesToDo = ({title, text}) =>{
+export const NotesToDo = ({title, notes}) =>{
     
     var countLines = 10
-    countLines += Math.round(text.length * 0.025);
+    countLines += Math.round(notes.length * 0.025);
 
 
     return(
@@ -18,10 +18,10 @@ export const NotesToDo = ({title, text}) =>{
                 <button className="close"><IoMdClose/></button>          
 
             </div>
-                <textarea>
-                    {text}
+                <textarea rows={500} defaultValue={notes} >
+                    
                 </textarea>
-                
+                <p>{countLines}</p>
         </Notepad>
 
     )
