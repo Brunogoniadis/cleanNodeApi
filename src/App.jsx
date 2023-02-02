@@ -19,20 +19,18 @@ function App() {
     getAllNotes();
   }, []);
 
-  async function handleSubmit(e){
+  async function handleSubmit(e) {
     e.preventDefault();
-
-
-
-    const response = await api.post('/annotations',{
+  
+    const response = await api.post('/annotations', {
       title,
       notes,
       priority: false
-    })
+    });
     
-    setTitles(' ');
-    setNotes(' ');
-    getAllNotes();
+    setTitles('');
+    setNotes('');
+    setAllNotes([ ... allNotes, response.data]);
   }
     
   return (
@@ -77,12 +75,6 @@ function App() {
           {allNotes.map(note => (
             <NotesToDo title={note.title} notes={note.notes} id={note.id} />
           ))}
-
-
-            
-
-
-
 
           </ul>
         </div>

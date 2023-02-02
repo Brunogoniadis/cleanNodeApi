@@ -21,7 +21,6 @@ export const NotesToDo = ({title, notes}) =>{
                 <textarea rows={500} defaultValue={notes} >
                     
                 </textarea>
-                <p>{countLines}</p>
         </Notepad>
 
     )
